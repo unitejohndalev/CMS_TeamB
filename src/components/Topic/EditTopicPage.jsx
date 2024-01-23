@@ -6,6 +6,7 @@ import { IoArrowBackCircle } from "react-icons/io5";
 
 //add icon
 import { IoIosAddCircle } from "react-icons/io";
+import { IoIosSave } from "react-icons/io";
 
 //edit icon
 import { FaEdit } from "react-icons/fa";
@@ -71,10 +72,10 @@ const EditTopicPage = () => {
           <div className="flex items-center justify-end w-full ">
             <Link to="/displaytopic">
               <div className="flex items-center gap-2 pr-5 cursor-pointer">
-                <div className="text-[#4c604c] text-[1.5rem]">
-                  <FaEdit />
+                <div className="text-[#126912] text-[1.5rem]">
+                  <IoIosSave  />
                 </div>
-                <span className="text-[#126912] font-semibold">Save</span>
+                <span className="text-[#126912] font-semibold"></span>
               </div>
             </Link>
           </div>

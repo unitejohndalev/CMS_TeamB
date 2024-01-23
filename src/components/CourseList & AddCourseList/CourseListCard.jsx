@@ -71,13 +71,13 @@ const CourseListCard = () => {
               <div
                 className=" h-[10vh] mb-10 flex w-[50%] lg:w-[30vw] cursor-pointer"
               >
-                <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
+                <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[8vh] rounded-l-sm lg:rounded-l-md">
                   <span>
                     <IoAdd className="lg:text-[2rem] text-white" />
                   </span>
                 </div>
-                <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]  w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                  <span className="lg:text-[.8rem]">Add New Course</span>
+                <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[8vh]  w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
+                  <span className="lg:text-[1rem]">Add New Course</span>
                 </div>
               </div>
             </Link>

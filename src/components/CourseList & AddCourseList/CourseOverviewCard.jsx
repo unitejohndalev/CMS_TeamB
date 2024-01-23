@@ -59,7 +59,7 @@ const CourseOverviewCard = () => {
             <p className="lg:font-bold">Course Overview</p>
           </div>
           <div className="w-[100%] mt-10 flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto lg:mt-5 items-right">
-            <p className="lg:font-bold">HTML And CSS</p>
+            <p className="lg:font-bold">HTML and CSS</p>
           </div>
           <div className="w-[69vw] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
             <div className="w-[20vw] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
@@ -72,8 +72,7 @@ const CourseOverviewCard = () => {
               <Link
                 to="/addtopictitlepage"
                 key={idx}
-                className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
-                <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
+                className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] place-content-center justify-center items-center">
                 <div
                   className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
@@ -92,13 +91,10 @@ const CourseOverviewCard = () => {
           <div className="lg:w-[65%] lg:flex lg:justify-center gap-5 ml-16">
             <Link
               to="/createnewchaptertitle"
-              className="lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]">
+              className="lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[60px] flex items-center justify-center w-[100%] lg:w-[15%] cursor-pointer bg-[#BCE8B1]">
               <div className=" w-[30%] flex items-center justify-center w-full">
-                <span className="pr-4">
-                  <FaEdit className="text-[2rem] lg:text-[2.5rem] text-white" />
-                </span>
-                <span className=" lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
-                  Add Chapter Title
+                <span className="">
+                  <IoAdd className="text-[2rem] lg:text-[2rem] text-white" />
                 </span>
               </div>
             </Link>
@@ -106,14 +102,10 @@ const CourseOverviewCard = () => {
 
             <Link
               to="/editchaptertitle"
-              className=" lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]">
-              <div className=" w-[30%] flex items-center justify-center  w-full">
-                <span className="pr-4 ">
-                  <IoAdd className="lg:font-bold text-[2rem] lg:text-[2.5rem] text-white" />
-                </span>
-             
-                <span className="lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
-                  Edit Chapter Title
+              className=" lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[15%] cursor-pointer bg-[#BCE8B1]">
+              <div className=" w-[30%] flex items-center justify-center place-self-center  w-full">
+                <span className="">
+                  <FaEdit className="lg:font-bold text-[2rem] lg:text-[2rem] text-white" />
                 </span>
               </div>
             </Link>

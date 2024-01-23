@@ -50,9 +50,7 @@ const DashboardCard = () => {
           Learn your way at Tsukiden.
         </p>
 
-        <button className="px-5 font-normal lg:absolute btn-style lg:rounded-lg lg:bottom-[-1.5rem] xl:h-[86px] xl:w-[280px] xl:text-[32px] xl:text-[rgba(255, 255, 255, 1)] ">
-          View Courses
-        </button>
+
       </div>
       <div
         className=" xl:h-[330px] 2xl:w-[1519px] flex flex-col lg:flex-row lg:w-[90vw] 
