@@ -70,7 +70,7 @@ const CreateNewChapterTitle = () => {
               <div
                 key={idx}
                 className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
-                <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
+               
                 <div
                   className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
@@ -81,7 +81,7 @@ const CreateNewChapterTitle = () => {
             );
           })}
           <div className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
-            <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
+            
             <div
               className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
@@ -101,12 +101,9 @@ const CreateNewChapterTitle = () => {
             <Link
               to="/courseoverview"
               className=" h-[10vh] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer">
-              <div className="bg-[#BCE8B1] w-[100%] flex justify-center items-center pr-2 justify-end h-[5vh] lg:h-[50px] rounded-sm lg:rounded-[1rem]">
+              <div className="bg-[#BCE8B1] w-[35%] flex justify-center items-center pr-2 justify-end h-[5vh] lg:h-[50px] rounded-sm lg:rounded-[1rem]">
                 <span className="pr-3">
-                  <TfiSave className="text-[2rem] text-white" />
-                </span>
-                <span className="lg:font-bold lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
-                  Save
+                  <TfiSave className="text-[2rem] lg:text-[1.5rem] text-white" />
                 </span>
               </div>
             </Link>

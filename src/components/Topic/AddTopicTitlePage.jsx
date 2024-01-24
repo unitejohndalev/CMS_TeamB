@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoArrowBackCircle } from "react-icons/io5";
 
 //add icon
-import { IoIosAddCircle } from "react-icons/io";
+import { IoIosAddCircle, IoIosSave } from "react-icons/io";
 
 //save icon
 import { TfiSave } from "react-icons/tfi";
@@ -30,7 +30,7 @@ const AddTopicTitlePage = () => {
           <div
             className="flex items-center mt-3 cursor-pointer "
             onClick={goBack}>
-            <span className="text-[2.5rem] text-white">
+            <span className="text-[2.5rem] text-white ">
               <IoArrowBackCircle />
             </span>
             <span className="text-[1rem] pl-1 text-white">Back</span>
@@ -61,9 +61,10 @@ const AddTopicTitlePage = () => {
             <Link to="/displaytopic">
               <div className="flex items-center gap-2 pr-5 cursor-pointer">
                 <div className="text-[#126912] text-[1.5rem]">
-                  <TfiSave />
+                  <span class="text-[#126912] font-semibold"></span>
+                  <IoIosSave />
                 </div>
-                <span className="text-[#126912] font-semibold">Save</span>
+                <span className="text-[#126912] font-semibold"></span>
               </div>
             </Link>
           </div>

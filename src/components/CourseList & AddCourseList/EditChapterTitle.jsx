@@ -67,8 +67,8 @@ const EditChapterTitle = () => {
             return (
               <div
                 key={idx}
-                className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
-                <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
+                className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-items-center">
+               
                 <div
                   className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">

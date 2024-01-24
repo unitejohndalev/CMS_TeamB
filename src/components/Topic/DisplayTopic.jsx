@@ -71,7 +71,6 @@ const DisplayTopic = () => {
                 <div className="text-[#126912] text-[1.5rem]">
                   <FaEdit />
                 </div>
-                <span className="text-[#126912] font-semibold">Edit</span>
               </div>
             </Link>
           </div>
