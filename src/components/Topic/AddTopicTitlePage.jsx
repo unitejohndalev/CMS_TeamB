@@ -30,7 +30,7 @@ const AddTopicTitlePage = () => {
           <div
             className="flex items-center mt-3 cursor-pointer "
             onClick={goBack}>
-            <span className="text-[2.5rem] text-white">
+            <span className="text-[2.5rem] text-white ">
               <IoArrowBackCircle />
             </span>
             <span className="text-[1rem] pl-1 text-white">Back</span>
