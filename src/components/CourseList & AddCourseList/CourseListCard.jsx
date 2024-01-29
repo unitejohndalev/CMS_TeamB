@@ -1,21 +1,14 @@
-/*January 10, 2024*/
+/* January 10, 2024 */
 import React, { useState, useEffect } from "react";
 import { IoAdd } from "react-icons/io5";
 import axios from "axios";
-
 import { Link } from "react-router-dom";
-
-//import mock data
 import data from "../../mockData/CourselistCard.json";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 const CourseListCard = () => {
-  // *NOTE
-  //if data is coming from db use useState hook to store the data
-  //sample: const [courses, setCourses] = useState([])
-
   const [courses, setCourses] = useState([]);
 
-  /* january 172024*/
   useEffect(() => {
     loadCourses();
   }, []);
@@ -26,40 +19,38 @@ const CourseListCard = () => {
   };
 
   const { courselist } = data;
-       
-          <div className=" xl:w-[1244px] w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[50%] lg:m-auto lg:mt-5 items-center gap-5">
-            {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
-            <Link to ="/courseoverview">
-            <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center m-5">
-              <p className="lg:font-bold">Course List</p>
-            </div>
-            {courselist.map((course, idx) => {
-              return (
+
+  return (
     <>
       <div className="w-full">
         <div className="">
-          <div className="xl:w-[1244px] w-[90%] mt-10 flex flex-col lg:w-[50%] lg:mt-5 items-start gap-5">
-            <Link to="/courseoverview">
-              <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[1.2rem] w-full flex justify-start">
-                <p className=" ml-5 lg:font-bold text-[34px] text-left">Course List</p>
+          <div className="2xl:w-[100%] xl:w-[1244px] w-[90%] mt-10 flex flex-col lg:w-[100%] lg:mt-5 items-start">
+            <div
+              to="/courseoverview"
+              className=" m-auto w-[90%] flex justify-between"
+            >
+              <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[1.2rem] flex items-center">
+                <p className="ml-5 lg:font-bold text-[34px] text-left">
+                  Course List
+                </p>
               </div>
-            </Link>
-
-            <Link to="/AddNewCourse">
-              <div
-                className=" h-[10vh] mb-10 flex w-[50%] justify-center lg:w-[30vw] cursor-pointer"
-              >
-                <div className="bg-[#87D275] w-[20%]  flex items-center justify-center h-[5vh] lg:h-[8vh] rounded-l-sm lg:rounded-l-md">
-                  <span>
-                    <IoAdd className="lg:text-[2rem] text-white" />
-                  </span>
-                </div>
+              <button className="flex items-center ml-40 ">
+                <IoAdd className="lg:text-[2rem] text-black " />
+                <BsThreeDotsVertical className="" />
+              </button>
+            </div>
+            <div className="w-[86%] bg-[#5e665b] h-[.3vh] m-auto items-center mb-10 lg:rounded-lg pl-0"></div>
+            <div className="mb-10 cursor-pointer">
+              <div className="ml-40 bg-[#ffffff] border-dashed border-2 text-white lg:font-bold h-[5vh] lg:h-[279px] lg:w-[279px] w-[279px] flex items-center justify-center rounded-l-sm lg:rounded-l-md rounded-r-sm lg:rounded-r-md">
+                <span>
+                  <IoAdd className="lg:text-[4rem] text-gray-300" />
+                </span>
               </div>
-            </Link>
+            </div>
           </div>
           <footer className="flex justify-center py-20">
             <div>
-              <p className="text-[#4D9349] font-medium">
+              <p className="text-[#4D9349] font-medium mt-10">
                 All Rights Reserved | Copyright 2024
               </p>
             </div>
@@ -71,4 +62,3 @@ const CourseListCard = () => {
 };
 
 export default CourseListCard;
-// /*January 10, 2024*/
