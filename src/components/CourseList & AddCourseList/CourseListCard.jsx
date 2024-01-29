@@ -1,101 +1,141 @@
-/*January 10, 2024*/
 import React, { useState, useEffect } from "react";
 import { IoAdd } from "react-icons/io5";
-
 import axios from "axios";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
-import { Link } from "react-router-dom";
-
-//import mock data
-import data from "../../mockData/CourselistCard.json";
+// January 29, 2024 - Cedrick
 
 const CourseListCard = () => {
-  // *NOTE
-  //if data is coming from db use useState hook to store the data
-  //sample: const [courses, setCourses] = useState([])
-
   const [courses, setCourses] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    // Add your form fields here
+    title: "",
+    description: "",
+  });
 
-  /* january 172024*/
   useEffect(() => {
     loadCourses();
   }, []);
 
   const loadCourses = async () => {
-    const result = await axios.get("http://localhost:8080/getCourse");
-    setCourses(result.data);
+    try {
+      const result = await axios.get("http://localhost:8080/getCourse");
+      setCourses(result.data);
+    } catch (error) {
+      console.error("Error loading courses:", error);
+    }
   };
-  /*January 15 2024 */
 
-  //course list mock data
-  const { courselist } = data;
+  const openPopup = () => {
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Add your form submission logic here
+      // Example: send data to the server using axios
+      await axios.post("http://localhost:8080/createCourse", formData);
+
+      // Reload courses and close the popup after form submission
+      loadCourses();
+      closePopup();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
+
   return (
     <>
-      {/* 1/12/2024 UI development and Mobile responsiveness */}
-
-      <div className="">
-        {/* 1/15/2024 functions and buttons */}
+      <div className="w-full">  
         <div className="">
-       
-          <div className=" xl:w-[1244px] w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[50%] lg:m-auto lg:mt-5 items-center gap-5">
-            {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
-            <Link to ="/courseoverview">
-            <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center m-5">
-              <p className="lg:font-bold">Course List</p>
-            </div>
-            {courselist.map((course, idx) => {
-              return (
-                <div key={idx} className="w-full mb-5  rounded-md shadow-md">
-                  <div className="flex px-0 py-0 rounded-md xl:h-[115px]">
-                    <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
-                      <p className="lg:font-medium">PL00{course.id}</p>
-                    </div>
-
-                    <p
-                      className="text-white lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
-                   rounded-r-sm lg:rounded-r-md 	bg-[#126912] "
-                    >
-                      {course.courseTitle}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-            </Link>
-      
-
-            {/*January 15 2024*/}
-            {/*January 19 2024 -gem modify buttons add footer*/}
-
-            <Link to="/AddNewCourse">
-              <div
-                className=" h-[10vh] mb-10 flex w-[50%] justify-center lg:w-[30vw] cursor-pointer"
-              >
-                <div className="bg-[#87D275] w-[20%]  flex items-center justify-center h-[5vh] lg:h-[8vh] rounded-l-sm lg:rounded-l-md">
-                  <span>
-                    <IoAdd className="lg:text-[2rem] text-white" />
-                  </span>
-                </div>
-                <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[8vh]  w-[50%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                  <span className="lg:text-[1rem]">Add New Course</span>
-                </div>
+          <div className="2xl:w-[100%] xl:w-[1244px] w-[90%] mt-10 flex flex-col lg:w-[100%] lg:mt-5 items-start">
+            <div
+              to="/courseoverview"
+              className=" m-auto w-[90%] flex justify-between"
+            >
+              <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[1.2rem] flex items-center">
+                <p className="ml-5 lg:font-bold text-[34px] text-left">
+                  Course List
+                </p>
               </div>
-            </Link>
+              <button className="flex items-center ml-40 ">
+                <BsThreeDotsVertical className="lg:text-[2rem] text-black " />
+                <BsThreeDotsVertical className="" />
+              </button>
+            </div>
+            <div className="w-[86%] bg-[#5e665b] h-[.3vh] m-auto items-center mb-10 lg:rounded-lg pl-0"></div>
+            <div className="mb-10 cursor-pointer">
+              {/* January 30, 2024 - Cedrick*/}
+            <div className="ml-40 bg-[#ffffff] border-dashed border-2 text-white lg:font-bold h-[10vh] lg:h-[279px] lg:w-[279px] w-[279px] flex items-center justify-center rounded-l-sm lg:rounded-l-md rounded-r-sm lg:rounded-r-md">
+            <button onClick={openPopup}>
+            <IoAdd className="lg:text-[4rem] text-gray-300" />
+          </button>
+        </div>
+      </div>
+      </div>
+
+{/* Popup Form */}
+{showPopup && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded h-[70%] w-[60%] shadow-md w-full">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+                placeholder="Course Title"
+                className="w-full border p-2 rounded"
+              />
+              <textarea
+                name="description"
+                value={formData.description}
+                onChange={handleChange}
+                placeholder="Course Description"
+                className="w-full border p-2 rounded"
+              />
+              <button
+                type="submit"
+                className="bg-blue-500 text-white px-4 py-2 rounded"
+              >
+                Submit
+              </button>
+            </form>
+            <button
+              onClick={closePopup}
+              className="mt-4 bg-gray-300 text-gray-700 px-4 py-2 rounded"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
           </div>
           <footer className="flex justify-center py-20">
             <div>
-              <p className="text-[#4D9349] font-medium">
+              <p className="text-[#4D9349] font-medium mt-10">
                 All Rights Reserved | Copyright 2024
               </p>
             </div>
           </footer>
         </div>
-          {/*January 19 2024 -gem modify buttons add footer*/}
-
-      </div>
     </>
   );
 };
 
 export default CourseListCard;
-// /*January 10, 2024*/
